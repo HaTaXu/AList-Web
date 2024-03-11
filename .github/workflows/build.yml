@@ -1,0 +1,76 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest]
+    name: Build
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          registry-url: "https://registry.npmjs.org"
+
+      - uses: pnpm/action-setup@v2.4.0
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8
+          run_install: false
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: MyAList-Web
+          persist-credentials: false
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Checkout dist repo
+        uses: actions/checkout@v4
+        with:
+          repository: HaTaXu/MyAList-Web-dist
+          ref: dev
+          path: MyAList-Web-dist
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Build
+        run: |
+          cd MyAList-Web
+          pnpm install
+          pnpm i18n:build
+          pnpm build
+          cd ..
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+      - name: Commit dist
+        run: |
+          cd MyAList-Web-dist
+          rm -rf dist
+          cp -r ../MyAList-Web/dist .
+          git add .
+          git config --local user.email "247777055@qq.com"
+          git config --local user.name "HanTx"
+          git commit --amend -m "upload dev dist"
+          cd ..
+
+      - name: Upload dist files
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.MY_TOKEN }}
+          branch: dev
+          directory: MyAList-Web-dist
+          repository: HaTaXu/MyAList-Web-dist
+          force: true
