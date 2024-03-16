@@ -59,7 +59,7 @@ jobs:
         run: |
           cd MyAList-Web-dist
           rm -rf dist
-          cp -r ../MyAList-Web/dist .
+          cp -r ../AList-Web/dist .
           git add .
           git config --local user.email "247777055@qq.com"
           git config --local user.name "HanTx"
