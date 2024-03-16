@@ -8,9 +8,9 @@ import {
   BsJoystick,
   BsMedium,
   BsFingerprint,
-  BsFront,
   BsCloudUploadFill,
   BsSearch,
+  BsBucket,
   BsPersonLinesFill,
 } from "solid-icons/bs"
 import { FiLogIn } from "solid-icons/fi"
@@ -20,7 +20,7 @@ import { OcWorkflow2 } from "solid-icons/oc"
 import { IoCopy, IoHome, IoMagnetOutline } from "solid-icons/io"
 import { Component, lazy } from "solid-js"
 import { Group, UserRole } from "~/types"
-import { FaSolidBook, FaSolidDatabase } from "solid-icons/fa"
+import { FaSolidDatabase } from "solid-icons/fa"
 
 export type SideMenuItem = SideMenuItemProps & {
   component?: Component
@@ -77,6 +77,12 @@ export const side_menu_items: SideMenuItem[] = [
         icon: FiLogIn,
         to: "/@manage/settings/ldap",
         component: () => <CommonSettings group={Group.LDAP} />,
+      },
+      {
+        title: "manage.sidemenu.s3",
+        icon: BsBucket,
+        to: "/@manage/settings/s3",
+        component: lazy(() => import("./settings/S3")),
       },
       {
         title: "manage.sidemenu.other",

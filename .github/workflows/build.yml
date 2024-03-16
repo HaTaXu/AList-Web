@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          path: MyAList-Web
+          path: AList-Web
           persist-credentials: false
           fetch-depth: 0
           submodules: recursive
@@ -46,7 +46,7 @@ jobs:
 
       - name: Build
         run: |
-          cd MyAList-Web
+          cd AList-Web
           pnpm install
           pnpm i18n:build
           pnpm build

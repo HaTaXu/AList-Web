@@ -121,10 +121,26 @@
     },
     "show_sidebar": "显示侧边栏",
     "show_sidebar_options": {
-      "none": "关闭",
-      "visible": "打开"
+      "none": "无",
+      "visible": "显示"
     },
-    "filename_scrollable": "文件名可滚动"
+    "list_item_filename_overflow": "列表项目文件名过长",
+    "list_item_filename_overflow_options": {
+      "ellipsis": "省略号",
+      "scrollable": "可滚动",
+      "multi_line": "多行显示"
+    },
+    "open_item_on_checkbox": "在复选框上打开选项",
+    "open_item_on_checkbox_options": {
+      "direct": "直接打开",
+      "with_ctrl": "按住 Ctrl/Command 按键打开",
+      "with_alt": "按住 Alt/Option 按键打开"
+    },
+    "select_with_mouse": "Select item with mouse while checkbox closed",
+    "select_with_mouse_options": {
+      "disabled": "停用",
+      "open_item_with_dblclick": "Open item with double click"
+    }
   },
   "package_download": {
     "current_status": "当前状态",

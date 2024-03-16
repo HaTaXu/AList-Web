@@ -57,6 +57,10 @@
   "qbittorrent_seedtime": "qBittorrent 做种时间",
   "qbittorrent_url": "qBittorrent链接",
   "robots_txt": "Robots.txt",
+  "s3_access_key_id": "S3 access key id",
+  "s3_buckets": "S3 buckets",
+  "s3_enabled": "S3 enabled",
+  "s3_secret_access_key": "S3 secret access key",
   "search_index": "搜索索引",
   "search_indexs": {
     "bleve": "Bleve",

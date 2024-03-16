@@ -23,7 +23,8 @@
     "docs": "文档",
     "offline_download": "离线下载",
     "online_download": "在线下载",
-    "ldap": "LDAP"
+    "ldap": "LDAP",
+    "s3": "S3"
   },
   "title": "AList 管理",
   "not_admin": "您不是管理员用户，请使用管理员帐户登录。",
