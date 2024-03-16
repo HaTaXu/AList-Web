@@ -69,10 +69,10 @@ export function useSelectWithMouse() {
       selection.on(
         "move",
         ({
-           store: {
-             changed: { added, removed },
-           },
-         }) => {
+          store: {
+            changed: { added, removed },
+          },
+        }) => {
           for (const el of added) {
             selectIndex(Number(el.getAttribute("data-index")), true)
           }
