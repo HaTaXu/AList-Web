@@ -13,7 +13,7 @@ import { ContextMenu } from "./context-menu"
 import { Pager } from "./Pager"
 import { useLink, useT } from "~/hooks"
 import { objStore } from "~/store"
-import { ObjType, UserMethods, UserPermissions } from "~/types"
+import { ObjType, UserMethods } from "~/types"
 import { bus } from "~/utils"
 import lightGallery from "lightgallery"
 import lgThumbnail from "lightgallery/plugins/thumbnail"
@@ -24,7 +24,6 @@ import lgFullscreen from "lightgallery/plugins/fullscreen"
 import "lightgallery/css/lightgallery-bundle.css"
 import { LightGallery } from "lightgallery/lightgallery"
 import { Search } from "./Search"
-import { Heading } from "@hope-ui/solid"
 import { me } from "~/store"
 
 const ListLayout = lazy(() => import("./List"))
@@ -40,6 +39,7 @@ const Folder = () => {
   let dynamicGallery: LightGallery | undefined
   const initGallery = () => {
     dynamicGallery = lightGallery(document.createElement("div"), {
+      addClass: "lightgallery-container",
       dynamic: true,
       thumbnail: true,
       plugins: [lgZoom, lgThumbnail, lgRotate, lgAutoplay, lgFullscreen],

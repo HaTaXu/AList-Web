@@ -36,6 +36,7 @@
   "devDependencies": {
     "@crowdin/cli": "^3.7.10",
     "@hrgui/libass-wasm-ts": "^1.0.3",
+    "@types/crypto-js": "^4.2.2",
     "@types/mark.js": "^8.11.8",
     "@types/node": "^18.7.5",
     "@types/sha256": "^0.2.0",

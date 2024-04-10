@@ -107,6 +107,7 @@
   },
   "189CloudPC": {
     "family_id": "Family id",
+    "family_transfer": "Family transfer",
     "no_use_ocr": "不使用OCR",
     "order_by": "排序",
     "order_bys": {
@@ -326,6 +327,28 @@
     "show_hidden-tips": "显示隐藏目录以及文件",
     "thumbnail": "缩略图",
     "thumbnail-tips": "启用在缩略图文件夹下预先生成的缩略图"
+  },
+  "Doge": {
+    "access_key_id": "访问密钥 Id",
+    "add_filename_to_disposition": "添加filename到disposition",
+    "add_filename_to_disposition-tips": "添加filename到Content-Disposition头中。",
+    "bucket": "Bucket",
+    "custom_host": "自定义HOST",
+    "endpoint": "Endpoint",
+    "force_path_style": "强制路径样式",
+    "list_object_version": "列出对象版本",
+    "list_object_versions": {
+      "v1": "V1",
+      "v2": "V2"
+    },
+    "placeholder": "占位文件名",
+    "region": "地区",
+    "remove_bucket": "移除bucket",
+    "remove_bucket-tips": "使用自定义主机时从路径中删除bucket名称。",
+    "root_folder_path": "根文件夹路径",
+    "secret_access_key": "安全访问密钥",
+    "session_token": "会话令牌",
+    "sign_url_expire": "签名链接有效期"
   },
   "Dropbox": {
     "client_id": "客户端ID",
@@ -799,6 +822,7 @@
     "ChaoXingGroupDrive": {},
     "Cloudreve": {},
     "Crypt": {},
+    "Doge": {},
     "Dropbox": {},
     "FTP": {},
     "FeijiPan": {},
@@ -859,6 +883,7 @@
     "ChaoXingGroupDrive": "超星小组盘",
     "Cloudreve": "Cloudreve",
     "Crypt": "Crypt",
+    "Doge": "多吉云",
     "Dropbox": "Dropbox",
     "FTP": "FTP",
     "FeijiPan": "飞机盘",

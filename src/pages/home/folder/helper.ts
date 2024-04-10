@@ -1,3 +1,4 @@
+import { Checkbox, hope } from "@hope-ui/solid"
 import { createKeyHold } from "@solid-primitives/keyboard"
 import { createEffect, createSignal, onCleanup } from "solid-js"
 import SelectionArea from "@viselect/vanilla"
@@ -26,6 +27,10 @@ export function useOpenItemWithCheckbox() {
     switch (local["open_item_on_checkbox"]) {
       case "direct": {
         setShouldOpen(true)
+        break
+      }
+      case "disable_while_checked": {
+        setShouldOpen(!haveSelected())
         break
       }
       case "with_ctrl": {
@@ -96,7 +101,7 @@ export function useSelectWithMouse() {
       const index = Number($selectedItem?.getAttribute("data-index"))
 
       const isClickOnContainer = Number.isNaN(index)
-      const isClickOnSelectedItems = () => objStore.objs[index].selected
+      const isClickOnSelectedItems = () => !!objStore.objs[index].selected
       if (isClickOnContainer || !isClickOnSelectedItems()) return
 
       e.stopPropagation()
@@ -106,3 +111,17 @@ export function useSelectWithMouse() {
 
   return { isMouseSupported, registerSelectContainer, captureContentMenu }
 }
+
+export const ItemCheckbox = hope(Checkbox, {
+  baseStyle: {
+    // expand the range of click
+    _before: {
+      content: "",
+      pos: "absolute",
+      top: -10,
+      right: -2,
+      bottom: -10,
+      left: -10,
+    },
+  },
+})
